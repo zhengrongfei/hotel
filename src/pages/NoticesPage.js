@@ -25,51 +25,6 @@ export default class NoticesPage extends Component {
       role: ""
     }
   }
-  componentWillMount() {   //初始化时在页面加载完成前执行
-
-    this.appendMeta()
-
-  }
-
-  componentWillReceiveProps(){  //刷新页面时执行
-
-    this.appendMeta()
-
-  }
-  appendMeta = () =>{
-
-    //在head标签插入meta标签，解决在生产环境链接失效问题
-
-    const metaTag = document.getElementsByTagName('meta');
-
-    let isHasTag = true;
-
-    for(let i=0;i<metaTag.length;i++){   //避免重复插入meta标签
-
-      const httpEquiv = metaTag[i].httpEquiv;
-
-      if(httpEquiv == 'Content-Security-Policy'){
-
-        isHasTag = false;
-
-      }
-
-    }
-
-    if(isHasTag){
-
-      const headItem = document.head;
-
-      let oMeta = document.createElement('meta');
-
-      oMeta.setAttribute('http-equiv','Content-Security-Policy');
-
-      oMeta.content = 'upgrade-insecure-requests';
-
-      headItem.appendChild(oMeta)
-
-    }
-  }
 
 
 //选中图片，预览头像
@@ -88,7 +43,7 @@ export default class NoticesPage extends Component {
     //发送axios请求,添加通知数据
     axios({
       method: "get",
-      url: "http://hn216.api.yesapi.cn/",
+      url: "https://hn216.api.yesapi.cn/",
       params: {
         s: "App.Table.Create",
         model_name: "yesapi_jeewms_t_s_notice",
@@ -119,7 +74,7 @@ export default class NoticesPage extends Component {
     const deleteData = this.state.deleteData
     axios({
       method: "get",
-      url: "http://hn216.api.yesapi.cn/",
+      url: "https://hn216.api.yesapi.cn/",
       params: {
         s: "App.Table.FreeDelete",
         return_data: "0",
@@ -143,7 +98,7 @@ export default class NoticesPage extends Component {
     //发送axios请求,查询通知数据
     axios({
       method: "get",
-      url: "http://hn216.api.yesapi.cn/",
+      url: "https://hn216.api.yesapi.cn/",
       params: {
         s: "App.Table.FreeQuery",
         return_data: "0",
