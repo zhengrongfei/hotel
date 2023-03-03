@@ -1,0 +1,92 @@
+.search {
+  width      : 100vw;
+  min-width  : fit-content;
+  min-height : fit-content;
+  
+  position   : sticky;
+  position   : -webkit-sticky;
+  top        : 0;
+  
+  background : var(--gray-light);
+  
+  padding    : 0 calc((100vw - var(--partition-m)) / 2) 0 calc((100vw - var(--partition-m)) / 2);
+}
+
+.search_wrapper {
+  width          : min(100%, var(--partition-m));
+  display        : flex;
+  flex-direction : column;
+}
+
+/* START[upper section] */
+.upper_section {
+  position : relative;
+  display  : flex;
+}
+
+.calendar_wrapper {
+  display : flex;
+}
+
+/* END[upper section] */
+
+/* START[lower section] */
+.lower_section {
+  width           : 100%;
+  
+  /*overflow        : hidden;*/
+  margin-bottom: fill;
+  
+  display         : flex;
+  flex-wrap       : wrap;
+  justify-content : space-between;
+}
+
+.value_fields {
+  display     : flex;
+  flex-wrap   : wrap;
+  gap         : var(--gap-component);
+  
+  width       : calc(6 * var(--unit-length) + var(--gap-component));
+  
+  padding-top : var(--gap-component);
+}
+
+.value_group {
+  display : flex;
+}
+
+.age_menu {
+  width: calc(5 * var(--unit-length));
+  height: fit-content;
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rates_fields {
+  width          : fit-content;
+  display        : flex;
+  flex-direction : column;
+  
+  padding-top    : var(--gap-component);
+}
+
+.rates_group {
+  display : flex;
+}
+
+.options_fields {
+  max-width      : fit-content;
+  display        : flex;
+  flex-direction : column;
+  
+  padding-top    : var(--gap-component);
+}
+
+/* END[lower section] */
+
+fieldset {
+  width         : 100%;
+  border        : none;
+}

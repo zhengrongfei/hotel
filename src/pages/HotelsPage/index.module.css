@@ -1,0 +1,22 @@
+.container {
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.viewport {
+  height: 100%;
+  
+  scroll-snap-type: y mandatory;
+  
+  overflow: scroll;
+}
+
+.subpage {
+  content-visibility: auto;
+  
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+}

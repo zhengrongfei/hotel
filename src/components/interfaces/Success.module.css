@@ -1,0 +1,17 @@
+.success {
+  width           : 100vw;
+  height          : 100vh;
+  
+  display         : flex;
+  flex-direction  : column;
+  
+  justify-content : center;
+  align-items     : center;
+  
+  row-gap         : var(--gap-component);
+  
+  font-size       : var(--size-title);
+  font-weight     : var(--font-semi-bold);
+  
+  color           : var(--green-dark);
+}

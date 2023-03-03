@@ -1,0 +1,28 @@
+.nav {
+  width      : 100vw;
+  min-width  : fit-content;
+  height     : var(--unit-length);
+  
+  background : var(--gray-light);
+  
+  padding    : 0 calc((100vw - var(--partition-m)) / 2) 0 max((100vw - var(--partition-m)) / 2, var(--margin-text));
+}
+
+.link_wrapper {
+  max-width : var(--partition-m);
+  display   : flex;
+}
+
+.home_link {
+  width : 100%;
+}
+
+.page_link {
+  max-width : 170px;
+  width     : 100%;
+}
+
+.home_button {
+  width       : 100%;
+  font-weight : var(--font-bold);
+}

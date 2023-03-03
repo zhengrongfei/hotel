@@ -1,0 +1,39 @@
+.month_body {
+  height: calc(var(--unit-length) * 6);
+  width: calc(var(--unit-length) * 7);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.month_head {
+  height: var(--unit-length);
+
+  font-weight: var(--font-medium);
+  font-size: var(--size-button);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--gray-dark);
+}
+
+.month_caption {
+  display: flex;
+}
+
+.month_caption span {
+  height: var(--gap-component);
+  width: var(--unit-length);
+
+  font-size: var(--size-caption);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  padding-bottom: var(--gap-caption);
+
+  color: var(--gray-dark);
+}

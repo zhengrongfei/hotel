@@ -1,0 +1,30 @@
+.parent {
+  position : relative;
+}
+
+.viewport {
+  width    : fit-content;
+  
+  position : absolute;
+  
+  overflow : hidden;
+}
+
+.background {
+  position   : absolute;
+  top        : 0;
+  
+  width      : 100%;
+  height     : 100%;
+  
+  background : var(--background-dense);
+}
+
+/* override fallback if browser supports blur filter */
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .background {
+    background-color        : var(--background-sparse);
+    -webkit-backdrop-filter : var(--blur);
+    backdrop-filter         : var(--blur);
+  }
+}

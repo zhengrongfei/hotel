@@ -1,0 +1,237 @@
+button {
+  position            : relative;
+  
+  height              : var(--unit-length);
+  /*width           : var(--unit-length);*/
+  flex-shrink         : 0;
+  
+  display             : -webkit-box;
+  display             : -ms-flexbox;
+  display             : flex;
+  align-items         : center;
+  white-space         : nowrap;
+  
+  color               : var(--black);
+  filter              : var(--filter-transparent);
+  
+  font-size           : var(--size-button);
+  font-weight         : var(--font-medium);
+  
+  /*overflow            : hidden;*/
+  
+  background          : none;
+  border              : none;
+  
+  -webkit-user-select : none;
+  -moz-user-select    : none;
+  -ms-user-select     : none;
+  user-select         : none;
+  
+  pointer-events      : auto;
+}
+
+.icon {
+  transition      : all var(--duration-fast) linear;
+  display         : -webkit-box;
+  display         : -ms-flexbox;
+  display         : flex;
+  justify-content : center;
+  align-items     : initial;
+}
+
+.underlay {
+  top             : 0;
+  position        : absolute;
+  
+  transition      : all var(--duration-fast) linear;
+  
+  display         : -webkit-box;
+  display         : -ms-flexbox;
+  display         : flex;
+  justify-content : center;
+  align-items     : initial;
+  
+  opacity         : 0;
+  transform       : scale(var(--scale-hidden));
+}
+
+.svg {
+  /* fixes webkit blur */
+  -webkit-backface-visibility : hidden;
+  backface-visibility         : hidden;
+  transform                   : translateZ(0) scale(1.0, 1.0);
+  
+  height                      : var(--unit-length);
+  min-width                   : var(--unit-length);
+  
+  display                     : grid;
+  place-content               : center;
+}
+
+.background {
+  position   : absolute;
+  
+  width      : 100%;
+  height     : 100%;
+  
+  transition : all var(--duration-normal) var(--transition-curve-snap);
+  
+  background : var(--yellow-dark);
+  opacity    : 0;
+}
+
+.description {
+  /* fixes webkit blur */
+  -webkit-backface-visibility : hidden;
+  backface-visibility         : hidden;
+  transform                   : translateZ(0) scale(1.0, 1.0);
+  
+  transition                  : all var(--duration-fast) linear;
+  
+  display                     : flex;
+  align-items                 : center;
+}
+
+/* START[default styling for all buttons] */
+.button[active="false"]:hover .icon {
+  color     : var(--black-pure);
+  
+  filter    : var(--filter-black);
+  
+  transform : scale(var(--scale-active));
+}
+
+.button[active="false"]:active .icon {
+  filter    : var(--filter-transparent);
+  
+  transform : scale(var(--scale-normal));
+}
+
+/* END[default styling for all buttons] */
+
+/* START[menu button active] */
+.button[varient="menu"][active="true"] .icon {
+  color     : var(--yellow-dark-transparrent);
+  filter    : var(--filter-black);
+  transform : scale(var(--scale-active));
+}
+
+.button[varient="menu"][active="true"]:hover .icon {
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal));
+}
+
+.button[varient="menu"][active="true"]:active .icon {
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal));
+}
+
+.button[varient="menu"][active="true"] .underlay {
+  opacity   : 1;
+  transform : scale(var(--scale-normal));
+}
+
+.button[varient="menu"][active="true"]:hover .underlay {
+  color     : var(--black-pure);
+  filter    : var(--filter-black);
+  transform : scale(var(--scale-active)) translateZ(1em);
+}
+
+.button[varient="menu"][active="true"]:active .underlay {
+  color     : var(--black);
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal)) translateZ(1em);
+}
+
+/* END[menu button active] */
+
+/* START[value button active] */
+.button[varient="value"][active="true"] .icon {
+  color     : var(--white);
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal));
+}
+
+.button[varient="value"][active="true"]:hover .icon {
+  filter    : var(--filter-black);
+  transform : scale(var(--scale-active));
+}
+
+.button[varient="value"][active="true"]:active .icon {
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal));
+}
+
+.button[varient="value"][active="true"] .background {
+  opacity : 1;
+}
+
+.button[varient="value"][active="false"] .background {
+  opacity : 0;
+}
+
+/* END[value button active] */
+
+/* START[selection button active] */
+.button[varient="selection"][active="true"] {
+  color : var(--yellow-dark);
+}
+
+.button[varient="selection"][active="true"] .underlay {
+  transition : all var(--duration-fast) linear, transform var(--duration-normal) var(--transition-curve-bounce);
+  opacity    : 1;
+  transform  : scale(var(--scale-normal));
+}
+
+.button[varient="selection"][active="true"]:hover .underlay {
+  filter    : var(--filter-black);
+  transform : scale(var(--scale-active));
+}
+
+.button[varient="selection"][active="true"]:active .underlay {
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal));
+}
+
+/* END[selection button active] */
+
+/* START[option button active] */
+.button[varient="option"][active="true"] .icon {
+  color      : var(--yellow-dark);
+  /*filter    : var(--filter-transparent);*/
+  /*transform : scale(var(--scale-normal));*/
+}
+
+/*.button[varient="option"][active="true"]:hover .icon {*/
+/*  filter    : var(--filter-black);*/
+/*  transform : scale(var(--scale-active));*/
+/*}*/
+
+/*.button[varient="option"][active="true"]:active .icon {*/
+/*  filter    : var(--filter-transparent);*/
+/*  transform : scale(var(--scale-normal));*/
+/*}*/
+
+/* END[option button active] */
+
+/* START[disabled button] */
+.button[varient="disabled"] {
+  color          : var(--gray-medium);
+  pointer-events : none;
+}
+
+/* END[disabled button] */
+
+/* START[inactive button] */
+.button[varient="inactive"]:hover .icon {
+  color     : var(--black);
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal));
+}
+
+.button[varient="inactive"]:active .icon {
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal));
+}
+
+/* END[inactive button] */

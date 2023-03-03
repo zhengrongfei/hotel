@@ -1,0 +1,118 @@
+@CHARSET "UTF-8";
+
+* {
+  margin             : 0;
+  padding            : 0;
+  -webkit-box-sizing : border-box;
+  box-sizing         : border-box;
+  text-decoration    : none;
+}
+
+:root {
+  --white                    : #FEFFFF;
+  --white-pure               : #FFFFFF;
+  
+  --gray-light               : #F1F2F6;
+  --gray-medium              : #E2E3E8;
+  --gray-dark                : #8E8E92;
+  
+  --black                    : #171819;
+  --black-pure               : #000000;
+  
+  --red-dark                 : #F25C54;
+  --red-light                : #FAB6B3;
+  
+  --yellow-dark              : #FCB612;
+  --yellow-dark-transparrent : rgba(252, 182, 18, 0.5);
+  
+  --green-dark               : #69B578;
+  
+  --blue-dark                : #4A90E2;
+  --blue-light               : #84BCDA;
+  
+  --filter-transparent       : drop-shadow(0px 2px 4px rgba(0, 0, 0, 0));
+  --filter-black             : drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+  
+  --shadow-menu              : 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-none              : 0 0 0 rgba(0, 0, 0, 0);
+  
+  --background-dense         : rgba(254, 255, 255, 0.95);
+  --background-sparse        : rgba(254, 255, 255, 0.3);
+  --blur                     : blur(30px);
+  
+  --scale-normal             : 1.0;
+  --scale-active             : 1.01;
+  --scale-hidden             : 0.5;
+  
+  --unit-length              : 44px;
+  
+  --partition-v              : 61.8%;
+  --partition-l              : 87.5vw;
+  --partition-m              : 980px;
+  --partition-s              : 570px;
+  --partition-xs             : max(300px, 20vw);
+  
+  --font-ultra-light         : 100;
+  --font-thin                : 200;
+  --font-light               : 300;
+  --font-regular             : 400;
+  --font-medium              : 500;
+  --font-semi-bold           : 600;
+  --font-bold                : 700;
+  --font-heavy               : 800;
+  --font-black               : 900;
+  
+  --size-title-large         : 42px;
+  --size-title               : 30px;
+  --size-button-large        : 24px;
+  --size-button              : 20px;
+  --size-body                : 16px;
+  --size-caption             : 12px;
+  
+  --gap-form                 : 180px;
+  --gap-text                 : 12px;
+  --gap-title                : 30px;
+  --gap-component            : 20px;
+  --gap-icon                 : 6px;
+  --gap-entry                : 3px;
+  --gap-caption              : 2px;
+  
+  --margin-button            : 10px;
+  --margin-text              : 16px;
+  --margin-component         : max(2 * var(--unit-length), 25vh);
+  
+  --duration-fast            : 0.15s;
+  --duration-normal          : 0.25s;
+  --duration-slow            : 0.5s;
+  
+  --transition-curve-normal  : cubic-bezier(0.8, 0, 0.5, 1);
+  --transition-curve-snap    : cubic-bezier(0.25, 0, 0.25, 1);
+  --transition-curve-bounce  : cubic-bezier(1, 0, 0.8, 3);
+  --transition-curve-out     : cubic-bezier(0.5, 0.5, 0.5, 1);
+}
+
+html, body {
+  margin                  : 0;
+  padding                 : 0;
+  
+  font-family             : -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-weight             : var(--font-light);
+  font-size               : var(--size-body);
+  
+  -webkit-box-sizing      : border-box;
+  box-sizing              : border-box;
+  
+  -webkit-font-smoothing  : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+  
+  scroll-behavior         : smooth;
+}
+
+*:focus {
+  outline : none;
+}
+
+code {
+  font-family : source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}

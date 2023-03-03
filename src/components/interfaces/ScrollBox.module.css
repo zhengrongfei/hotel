@@ -1,0 +1,36 @@
+.container {
+  position : relative;
+  width    : auto;
+  height   : auto;
+}
+
+.content {
+  height             : 100%;
+  width              : 100%;
+  
+  overflow           : auto;
+  
+  scrollbar-width    : none; /* Firefox */
+  -ms-overflow-style : none; /* Internet Explorer 10+ */
+}
+
+.content::-webkit-scrollbar {
+  display : none;
+}
+
+.track {
+  position         : absolute;
+  
+  right            : 0;
+  bottom           : 0;
+  
+  overflow         : hidden;
+  
+  background-color : var(--gray-light);
+}
+
+.thumb {
+  position         : absolute;
+  
+  background-color : var(--gray-dark);
+}

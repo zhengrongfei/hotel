@@ -1,0 +1,22 @@
+.icon {
+  /* fixes webkit blur */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1.0, 1.0);
+
+  height: var(--unit-length);
+  min-width: var(--unit-length);
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: var(--size-button);
+  font-weight: var(--font-medium);
+
+  background: none;
+  border: none;
+  color: var(--black);
+}

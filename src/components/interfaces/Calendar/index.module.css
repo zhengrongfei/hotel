@@ -1,0 +1,57 @@
+.button {
+  background: var(--gray-light);
+}
+
+.button_container {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  
+  pointer-events: none;
+}
+
+.month_viewport {
+  display: flex;
+
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  
+  gap: var(--unit-length);
+  
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.month_viewport::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+/*.month_container {*/
+/*  position: relative;*/
+/*  */
+/*  display: flex;*/
+/*  gap: var(--unit-length);*/
+/*}*/
+
+.month_header {
+  position: absolute;
+  
+  width: 100%;
+  height: var(--unit-length);
+  
+  background: var(--gray-light);
+}
+
+.month {
+  content-visibility: auto;
+  
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+}

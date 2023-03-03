@@ -1,0 +1,73 @@
+.room_selection {
+  width          : var(--partition-l);
+  height         : 100%;
+  
+  display        : flex;
+  gap            : var(--unit-length);
+  
+  margin-left    : auto;
+  margin-right   : auto;
+  padding-top    : var(--unit-length);
+  padding-bottom : var(--unit-length);
+}
+
+.room_visual {
+  width    : 100%;
+  height   : 100%;
+  
+  position : relative;
+}
+
+.tower_selector {
+  display  : flex;
+  position : relative;
+}
+
+.floor_plan {
+  width     : 40vw;
+  height    : 40vh;
+  
+  position  : relative;
+  
+  top       : 50%;
+  left      : 50%;
+  
+  transform : translateX(-50%) translateY(-50%);
+}
+
+.floor_selector {
+  width    : var(--unit-length);
+  height   : 100%;
+  
+  top      : 0;
+  right    : 0;
+  
+  position : absolute;
+}
+
+.room_list {
+  width          : 450px;
+  height         : 100%;
+  
+  display        : flex;
+  flex-shrink    : 0;
+  flex-direction : column;
+}
+
+.list_bar {
+  width      : 100%;
+  min-height : var(--unit-length);
+  
+  display    : flex;
+  
+  background : var(--gray-light);
+}
+
+.list_body {
+  width      : 100%;
+  height     : 100%;
+  
+  position   : relative;
+  
+  overflow-y : auto;
+}

@@ -1,0 +1,93 @@
+.form_container {
+  position                : absolute;
+  z-index                 : 2;
+  
+  width                   : 100vw;
+  height                  : 100vh;
+  
+  -webkit-backdrop-filter : blur(20px);
+  backdrop-filter         : blur(20px);
+  
+  user-select             : none;
+}
+
+.title_bar {
+  height      : var(--unit-length);
+  max-width   : min(var(--partition-m), var(--partition-l));
+  
+  display     : block;
+  text-align  : center;
+  
+  margin      : var(--gap-form) auto var(--gap-title) auto;
+  
+  font-weight : var(--font-semi-bold);
+  font-size   : var(--size-title);
+}
+
+.cancel {
+  position : absolute;
+}
+
+.title {
+  height          : 100%;
+  
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+}
+
+.form {
+  max-width       : var(--partition-xs);
+  
+  margin          : var(--gap-title) auto 0 auto;
+  
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  align-items     : flex-start;
+}
+
+fieldset {
+  width         : 100%;
+  border        : none;
+  
+  /*margin-bottom : var(--gap-component);*/
+}
+
+.date_container {
+  overflow : visible;
+}
+
+.date_field {
+  display     : flex;
+  align-items : center;
+}
+
+.location_container {
+  display     : flex;
+  align-items : center;
+}
+
+.button {
+  color : black;
+}
+
+.parallelogram {
+  width      : 100px;
+  height     : 100px;
+  font-size  : 30px;
+  color      : white;
+  border     : none;
+  background : none;
+  outline    : none;
+  position   : relative;
+  z-index    : 0;
+  margin     : 15px;
+  filter     : drop-shadow(0px 30px 25px rgba(236, 0, 244, 0.45));
+  clip-path  : polygon(0 20%, 100% 0, 90% 88%, 3% 96%, 20% 20%);
+  background : black;
+}
+
+.parallelogram:hover {
+  background : #61dafb;
+}

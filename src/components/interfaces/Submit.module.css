@@ -1,0 +1,155 @@
+.submit {
+  position            : relative;
+  
+  height              : var(--unit-length);
+  min-width           : fit-content;
+  flex-shrink         : 0;
+  
+  display             : -webkit-box;
+  display             : -ms-flexbox;
+  display             : flex;
+  align-items         : center;
+  white-space         : nowrap;
+  
+  justify-content     : center;
+  
+  color               : var(--white);
+  filter              : var(--filter-transparent);
+  
+  font-size           : var(--size-button);
+  font-weight         : var(--font-medium);
+  
+  transition          : all var(--duration-fast) var(--transition-curve-normal);
+  
+  background          : none;
+  border              : none;
+  
+  -webkit-user-select : none;
+  -moz-user-select    : none;
+  -ms-user-select     : none;
+  user-select         : none;
+  
+  pointer-events      : auto;
+}
+
+.underlay {
+  position        : absolute;
+  
+  transition      : all var(--duration-fast) linear;
+  
+  display         : -webkit-box;
+  display         : -ms-flexbox;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  
+  opacity         : 0;
+  transform       : scale(var(--scale-hidden));
+}
+
+.background {
+  position   : absolute;
+  
+  width      : 100%;
+  height     : 100%;
+  
+  transition : all var(--duration-normal) var(--transition-curve-snap);
+}
+
+.svg {
+  /* fixes webkit blur */
+  -webkit-backface-visibility : hidden;
+  backface-visibility         : hidden;
+  transform                   : translateZ(0) scale(1.0, 1.0);
+  
+  height                      : var(--unit-length);
+  min-width                   : var(--unit-length);
+  
+  display                     : grid;
+  place-content               : center;
+}
+
+.description {
+  transition : all var(--duration-fast) linear;
+}
+
+/* START[submit idle] */
+.submit[state="idle"]:hover .description {
+  filter    : var(--filter-black);
+  transform : scale(var(--scale-active));
+}
+
+.submit[state="idle"]:active .description {
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal));
+}
+
+.submit[state="idle"] .background {
+  background : var(--yellow-dark);
+  /*opacity : 1;*/
+}
+/* END[submit idle] */
+
+/* START[submit click] */
+.submit[state="click"]:hover .description {
+  filter    : var(--filter-black);
+  transform : scale(var(--scale-active));
+}
+
+.submit[state="click"]:active .description {
+  filter    : var(--filter-transparent);
+  transform : scale(var(--scale-normal));
+}
+
+.submit[state="click"] .background {
+  background : var(--gray-dark);
+}
+/* END[submit click] */
+
+/* START[submit disabled] */
+.submit[state="disabled"] {
+  pointer-events : none;
+}
+
+.submit[state="disabled"] .background {
+  background : var(--gray-dark);
+}
+/* END[submit disabled] */
+
+/* START[submit success] */
+.submit[state="success"] .background {
+  background : var(--green-dark);
+}
+/* END[submit success] */
+
+/*.submit:hover {*/
+/*  filter    : drop-shadow(0px 2px 4px var(--filter-black));*/
+/*  position : scale(1.01);*/
+/*}*/
+
+/*.submit:active {*/
+/*  filter    : none;*/
+/*  position : scale(1.0);*/
+/*}*/
+
+/*.error {*/
+/*  width               : 100%;*/
+/*  */
+/*  display             : flex;*/
+/*  justify-content     : flex-start;*/
+/*  */
+/*  overflow            : hidden;*/
+/*  */
+/*  color               : var(--red-dark);*/
+/*  */
+/*  font-size           : var(--size-caption);*/
+/*  font-weight         : var(--font-regular);*/
+/*  */
+/*  margin              : var(--gap-caption) 0 0 0;*/
+/*  */
+/*  -webkit-user-select : auto;*/
+/*  -moz-user-select    : auto;*/
+/*  -ms-user-select     : auto;*/
+/*  user-select         : auto;*/
+/*}*/
+

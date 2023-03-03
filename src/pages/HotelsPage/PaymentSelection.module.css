@@ -1,0 +1,121 @@
+.payment_selection {
+  width          : var(--partition-l);
+  height         : 100%;
+  
+  display        : flex;
+  gap            : var(--unit-length);
+  
+  margin-left    : auto;
+  margin-right   : auto;
+  padding-top    : var(--unit-length);
+  padding-bottom : var(--unit-length);
+}
+
+.summary {
+  width          : 100%;
+  height         : 100%;
+  
+  position       : relative;
+  
+  display        : flex;
+  flex-direction : column;
+  
+  background     : var(--gray-light);
+}
+
+.image {
+  width           : 100%;
+  height          : auto;
+  min-height      : 0;
+  aspect-ratio    : 16/9;
+  
+  object-position : center;
+  object-fit      : cover;
+  
+  display         : block;
+}
+
+.details {
+  width          : 100%;
+  min-height     : fit-content;
+  height         : var(--partition-v);
+  
+  display        : flex;
+  flex-direction : column;
+  
+  padding        : var(--gap-component) var(--gap-title) var(--gap-component) var(--gap-title);
+  text-align     : end;
+  
+  background     : var(--gray-light);
+}
+
+.header {
+  font-size   : var(--size-title);
+  font-weight : var(--font-semi-bold);
+  color       : var(--black);
+}
+
+.entry {
+  margin-top  : var(--gap-text);
+  
+  font-size   : var(--size-button);
+  font-weight : var(--font-medium);
+  color       : var(--gray-dark);
+  
+  overflow    : hidden;
+}
+
+.entry:nth-last-child(2) {
+  margin-bottom : var(--gap-text);
+}
+
+.entry > u {
+  font-weight : var(--font-thin);
+  font-style  : normal;
+}
+
+.price {
+  margin-top  : auto;
+  
+  font-size   : var(--size-button);
+  font-weight : var(--font-medium);
+  color       : var(--black);
+}
+
+.caption {
+  font-size   : var(--size-caption);
+  font-weight : var(--font-light);
+}
+
+.info_list {
+  width          : 450px;
+  height         : 100%;
+  
+  display        : flex;
+  flex-shrink    : 0;
+  flex-direction : column;
+}
+
+.list_bar {
+  width       : 100%;
+  min-height  : var(--unit-length);
+  
+  display     : flex;
+  align-items : center;
+  
+  font-weight : var(--font-medium);
+  font-size   : var(--size-button);
+  
+  color       : var(--gray-dark);
+  
+  background  : var(--gray-light);
+}
+
+.list_body {
+  width      : 100%;
+  height     : 100%;
+  
+  position   : relative;
+  
+  overflow-y : auto;
+}

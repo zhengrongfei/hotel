@@ -1,0 +1,53 @@
+
+/* 评论组件样式 */
+.comment {
+    display: flex;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    min-height: 50px;
+  
+    position: relative;
+  }
+  
+  .comment .comment-user {
+    flex-shrink: 0;
+  }
+  
+  .comment span {
+    color: #00a3cf;
+    font-style: italic;
+  }
+  
+  .comment span.comment-createtime {
+    font-size: small;
+    margin-top: 40px;
+    margin-left: 250px;
+    color: black;
+    font-style: normal;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+  }
+  
+  .comment:hover span.comment-delete {
+    color: #00a3cf;
+  }
+  
+  .comment span.comment-delete {
+    font-size: small;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    font-style: normal;
+    color: transparent;
+    cursor: pointer;
+  }
+  
+  .comment p {
+    margin: 0;
+    text-indent: 5px;
+  }
+  

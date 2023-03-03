@@ -1,0 +1,63 @@
+.room {
+  position       : absolute;
+  
+  width          : 100%;
+  height         : 100%;
+  
+  top            : 0;
+  left           : 0;
+  
+  color          : var(--black);
+  background     : var(--gray-light);
+  
+  transition     : all var(--duration-fast) var(--transition-curve-normal);
+  
+  pointer-events : auto;
+}
+
+.name {
+  position   : absolute;
+  
+  transform  : translateX(-50%) translateY(-50%);
+  
+  transition : all var(--duration-fast) var(--transition-curve-normal);
+}
+
+.container {
+  position            : absolute;
+  
+  width               : 100%;
+  height              : 100%;
+  
+  background          : none;
+  border              : none;
+  
+  -webkit-user-select : none;
+  -moz-user-select    : none;
+  -ms-user-select     : none;
+  user-select         : none;
+  
+  pointer-events      : none;
+  
+  filter              : var(--filter-transparent);
+  
+  transition          : all var(--duration-fast) linear;
+}
+
+.container[active="true"] > .room {
+  background : var(--yellow-dark);
+}
+
+.container[active="true"] > .name {
+  color : var(--white);
+}
+
+.container:hover {
+  transform : translateZ(1px);
+  filter    : var(--filter-black);
+}
+
+.container:active {
+  transform : translateZ(-1px);
+  filter    : var(--filter-transparent);
+}

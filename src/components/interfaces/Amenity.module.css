@@ -1,0 +1,17 @@
+.entry {
+  height      : fit-content;
+  width       : fit-content;
+  
+  display     : flex;
+  align-items : center;
+  
+  flex-wrap   : nowrap;
+  column-gap  : var(--gap-entry);
+  
+  color       : var(--black);
+}
+
+.title {
+  font-size   : var(--size-caption);
+  font-weight : var(--font-medium);
+}

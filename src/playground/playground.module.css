@@ -1,0 +1,32 @@
+.container {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.track {
+  background-color: #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+}
+
+.thumb {
+  border-radius: 12px;
+  background-color: #333;
+  position: absolute;
+  width: 16px;
+}
