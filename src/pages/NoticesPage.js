@@ -25,6 +25,51 @@ export default class NoticesPage extends Component {
       role: ""
     }
   }
+  componentWillMount() {   //初始化时在页面加载完成前执行
+
+    this.appendMeta()
+
+  }
+
+  componentWillReceiveProps(){  //刷新页面时执行
+
+    this.appendMeta()
+
+  }
+  appendMeta = () =>{
+
+    //在head标签插入meta标签，解决在生产环境链接失效问题
+
+    const metaTag = document.getElementsByTagName('meta');
+
+    let isHasTag = true;
+
+    for(let i=0;i<metaTag.length;i++){   //避免重复插入meta标签
+
+      const httpEquiv = metaTag[i].httpEquiv;
+
+      if(httpEquiv == 'Content-Security-Policy'){
+
+        isHasTag = false;
+
+      }
+
+    }
+
+    if(isHasTag){
+
+      const headItem = document.head;
+
+      let oMeta = document.createElement('meta');
+
+      oMeta.setAttribute('http-equiv','Content-Security-Policy');
+
+      oMeta.content = 'upgrade-insecure-requests';
+
+      headItem.appendChild(oMeta)
+
+    }
+  }
 
 
 //选中图片，预览头像
